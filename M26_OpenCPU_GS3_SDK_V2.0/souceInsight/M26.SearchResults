@@ -1,0 +1,18 @@
+---- BIT_LINK Matches (17 in 4 files) ----
+analysePackage.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):			pHandleData->bitFlag = set_bitFor(pHandleData->bitFlag, BIT_LINK, TRUE);
+Custom_common.h (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):	BIT_LINK,
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):		   if(get_bitFor(handleData.bitFlag, BIT_LINK))
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):				if(get_bitFor(handleData.bitFlag, BIT_LINK)){//正常连接
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):				  handleData.bitFlag = set_bitFor(handleData.bitFlag, BIT_LINK, FALSE);
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):				handleData.bitFlag = set_bitFor(handleData.bitFlag, BIT_LINK, FALSE);
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):             	handleData.bitFlag = set_bitFor(handleData.bitFlag, BIT_LINK, FALSE);
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):			  handleData.bitFlag = set_bitFor(handleData.bitFlag, BIT_LINK, FALSE);
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):					handleData.bitFlag = set_bitFor(handleData.bitFlag, BIT_LINK, FALSE);
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):					handleData.bitFlag = set_bitFor(handleData.bitFlag, BIT_LINK, FALSE);
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):				handleData.bitFlag = set_bitFor(handleData.bitFlag, BIT_LINK, FALSE);
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):					handleData.bitFlag = set_bitFor(handleData.bitFlag, BIT_LINK, FALSE);
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):				   handleData.bitFlag = set_bitFor(handleData.bitFlag, BIT_LINK, FALSE);
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):				handleData.bitFlag = set_bitFor(handleData.bitFlag, BIT_LINK, FALSE);
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):				handleData.bitFlag = set_bitFor(handleData.bitFlag, BIT_LINK, FALSE);
+Tcpclient.c (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):				handleData.bitFlag = set_bitFor(handleData.bitFlag, BIT_LINK, FALSE);
+Types.h (e:\项目\m26_buletooth\m26_opencpu_gs3_sdk_v2.0\custom):	BIT_LINK,

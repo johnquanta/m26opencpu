@@ -1,0 +1,345 @@
+ril/src/ril_atResponse.c: In function 'Ql_RIL_AT_SetErrCode':
+ril/src/ril_atResponse.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ril/src/ril_audio.c: In function 'ATResponse_AUD_handler':
+ril/src/ril_audio.c:399:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+ril/src/ril_bluetooth.c: In function 'OnURCHandler_BTDisconn':
+ril/src/ril_bluetooth.c:1531:10: warning: unused variable 'profileId' [-Wunused-variable]
+ril/src/ril_network.c: In function 'ATRsp_COPS_Handler':
+ril/src/ril_network.c:505:14: warning: unused variable 'str' [-Wunused-variable]
+example/nema_pro.c: In function 'read_gps_I2C_buffer':
+example/nema_pro.c:170:9: warning: unused variable 'realwrlen' [-Wunused-variable]
+example/nema_pro.c: In function 'extract_nmea':
+example/nema_pro.c:190:5: warning: unused variable 'nmea_buf' [-Wunused-variable]
+example/nema_pro.c:189:9: warning: unused variable 'realwrlen' [-Wunused-variable]
+example/nema_pro.c: In function 'iop_inst_avail':
+example/nema_pro.c:283:21: warning: operation on 'id_que_tail' may be undefined [-Wsequence-point]
+example/nema_pro.c: In function 'iop_get_inst':
+example/nema_pro.c:321:13: warning: operation on 'idx' may be undefined [-Wsequence-point]
+example/nema_pro.c: In function 'iop_pcrx_nmea':
+example/nema_pro.c:353:25: warning: operation on 'id_que_head' may be undefined [-Wsequence-point]
+example/nema_pro.c:358:29: warning: operation on 'id_que_tail' may be undefined [-Wsequence-point]
+example/nema_pro.c:379:29: warning: operation on 'rx_que_head' may be undefined [-Wsequence-point]
+example/nema_pro.c:385:29: warning: operation on 'rx_que_head' may be undefined [-Wsequence-point]
+example/nema_pro.c:405:25: warning: operation on 'rx_que_head' may be undefined [-Wsequence-point]
+example/utility.c: In function 'Check_Separator':
+example/utility.c:45:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+example/utility.c:52:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+example/utility.c:59:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+example/utility.c:42:11: warning: unused variable 'pChar2' [-Wunused-variable]
+example/utility.c: In function 'Analyse_Command':
+example/utility.c:103:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+example/utility.c:120:17: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+In file included from custom/analysePackage.c:7:0:
+custom/ServerDataHandle.h:7:0: warning: "COMM_VERSOIN" redefined [enabled by default]
+In file included from custom/custom_common.h:10:0,
+                 from custom/analysePackage.c:6:
+custom/config.h:109:0: note: this is the location of the previous definition
+In file included from custom/analysePackage.c:7:0:
+custom/ServerDataHandle.h:9:0: warning: "DEVICE_VERSOIN" redefined [enabled by default]
+In file included from custom/custom_common.h:10:0,
+                 from custom/analysePackage.c:6:
+custom/config.h:53:0: note: this is the location of the previous definition
+In file included from custom/analysePackage.c:7:0:
+custom/ServerDataHandle.h:42:0: warning: "COM_SET_ID_LEN" redefined [enabled by default]
+In file included from custom/custom_common.h:10:0,
+                 from custom/analysePackage.c:6:
+custom/config.h:164:0: note: this is the location of the previous definition
+custom/analysePackage.c: In function 'AnalyseData':
+custom/analysePackage.c:297:7: warning: implicit declaration of function 'device_ParaSave' [-Wimplicit-function-declaration]
+custom/analysePackage.c:63:5: warning: unused variable 'err' [-Wunused-variable]
+custom/analysePackage.c:54:18: warning: unused variable 'check1' [-Wunused-variable]
+custom/analysePackage.c:54:6: warning: unused variable 'check0' [-Wunused-variable]
+custom/analysePackage.c:52:5: warning: unused variable 'r' [-Wunused-variable]
+In file included from custom/analysePackage.c:6:0:
+custom/analysePackage.c: At top level:
+custom/custom_common.h:285:12: warning: 'timeout_90S_monitor' defined but not used [-Wunused-variable]
+custom/at_deviceCmd.c: In function 'device_Init':
+custom/at_deviceCmd.c:65:5: warning: implicit declaration of function 'Ql_SecureData_Read' [-Wimplicit-function-declaration]
+custom/at_deviceCmd.c:60:7: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+custom/at_deviceCmd.c: In function 'device_ParaSave':
+custom/at_deviceCmd.c:172:4: warning: implicit declaration of function 'Ql_SecureData_Store' [-Wimplicit-function-declaration]
+custom/at_deviceCmd.c:174:92: warning: unknown escape sequence: '\d' [enabled by default]
+custom/at_deviceCmd.c: In function 'at_cmdProcess':
+custom/at_deviceCmd.c:244:8: warning: unused variable 'i' [-Wunused-variable]
+custom/at_deviceCmd.c:240:9: warning: unused variable 'tempStr' [-Wunused-variable]
+custom/at_deviceCmd.c: In function 'at_setupCmdId':
+custom/at_deviceCmd.c:413:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from custom/at_deviceCmd.c:4:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/at_deviceCmd.c:413:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from custom/at_deviceCmd.c:4:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/at_deviceCmd.c:413:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from custom/at_deviceCmd.c:4:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/at_deviceCmd.c:413:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from custom/at_deviceCmd.c:4:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/at_deviceCmd.c:411:9: warning: unused variable 'flag' [-Wunused-variable]
+In file included from custom/at_deviceCmd.h:5:0,
+                 from custom/at_deviceCmd.c:3:
+custom/at_deviceCmd.c: At top level:
+custom/custom_common.h:285:12: warning: 'timeout_90S_monitor' defined but not used [-Wunused-variable]
+In file included from custom/at_deviceCmd.c:3:0:
+custom/at_deviceCmd.h:19:11: warning: 'at_cmdLine' defined but not used [-Wunused-variable]
+custom/at_deviceCmd.c: In function 'at_queryCmdApn':
+custom/at_deviceCmd.c:632:9: warning: 'buf[0]' is used uninitialized in this function [-Wuninitialized]
+custom/coin_prize.c:36:3: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+custom/coin_prize.c: In function 'LinkfFalutSend':
+custom/coin_prize.c:84:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+custom/coin_prize.c:84:5: note: expected 'char *' but argument is of type 'u8 *'
+custom/coin_prize.c:85:5: warning: implicit declaration of function 'send_data_to_server' [-Wimplicit-function-declaration]
+custom/coin_prize.c: In function 'GPSSend':
+custom/coin_prize.c:115:3: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+custom/coin_prize.c:115:3: note: expected 'char *' but argument is of type 'u8 *'
+custom/coin_prize.c:116:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from custom/coin_prize.c:3:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/coin_prize.c:102:5: warning: unused variable 'i' [-Wunused-variable]
+custom/coin_prize.c: In function 'Device_CoinIn_Send':
+custom/coin_prize.c:140:3: warning: implicit declaration of function 'send_data_to_server1' [-Wimplicit-function-declaration]
+custom/coin_prize.c: In function 'bill_Write':
+custom/coin_prize.c:489:2: warning: implicit declaration of function 'Ql_SecureData_Store' [-Wimplicit-function-declaration]
+custom/coin_prize.c: In function 'bill_Read':
+custom/coin_prize.c:524:6: warning: implicit declaration of function 'Ql_SecureData_Read' [-Wimplicit-function-declaration]
+custom/coin_prize.c:545:8: warning: array subscript has type 'char' [-Wchar-subscripts]
+custom/coin_prize.c:520:6: warning: unused variable 'ress' [-Wunused-variable]
+custom/coin_prize.c: In function 'Callback_CoinInPulseCheck':
+custom/coin_prize.c:651:2: warning: implicit declaration of function 'get_bitFor' [-Wimplicit-function-declaration]
+custom/coin_prize.c:666:7: warning: implicit declaration of function 'set_bitFor' [-Wimplicit-function-declaration]
+In file included from custom/coin_prize.c:10:0:
+custom/coin_prize.c: At top level:
+custom/custom_common.h:285:12: warning: 'timeout_90S_monitor' defined but not used [-Wunused-variable]
+custom/DES.c:48:5: warning: missing braces around initializer [-Wmissing-braces]
+custom/DES.c:48:5: warning: (near initialization for 's_box[0]') [-Wmissing-braces]
+custom/DES.c: In function 's_func':
+custom/DES.c:146:8: warning: array subscript has type 'char' [-Wchar-subscripts]
+custom/DES.c:146:8: warning: array subscript has type 'char' [-Wchar-subscripts]
+custom/DES.c:146:8: warning: array subscript has type 'char' [-Wchar-subscripts]
+custom/ee2prom.c: In function 'I2CWriteByte':
+custom/ee2prom.c:77:1: warning: control reaches end of non-void function [-Wreturn-type]
+In file included from custom/fota_by_http.c:67:0:
+custom/ServerDataHandle.h:7:0: warning: "COMM_VERSOIN" redefined [enabled by default]
+In file included from custom/custom_common.h:10:0,
+                 from custom/fota_by_http.c:66:
+custom/config.h:109:0: note: this is the location of the previous definition
+In file included from custom/fota_by_http.c:67:0:
+custom/ServerDataHandle.h:9:0: warning: "DEVICE_VERSOIN" redefined [enabled by default]
+In file included from custom/custom_common.h:10:0,
+                 from custom/fota_by_http.c:66:
+custom/config.h:53:0: note: this is the location of the previous definition
+In file included from custom/fota_by_http.c:67:0:
+custom/ServerDataHandle.h:42:0: warning: "COM_SET_ID_LEN" redefined [enabled by default]
+In file included from custom/custom_common.h:10:0,
+                 from custom/fota_by_http.c:66:
+custom/config.h:164:0: note: this is the location of the previous definition
+custom/fota_by_http.c: In function 'CallBack_UpgradeState_Ind':
+custom/fota_by_http.c:142:4: warning: implicit declaration of function 'Soft_Restart' [-Wimplicit-function-declaration]
+custom/fota_by_http.c:143:4: warning: implicit declaration of function 'tcp_state_set' [-Wimplicit-function-declaration]
+custom/fota_by_http.c: In function 'Fota_Pro':
+custom/fota_by_http.c:161:2: warning: pointer targets in passing argument 1 of 'Ql_strcmp' differ in signedness [-Wpointer-sign]
+In file included from custom/fota_by_http.c:63:0:
+include/ql_stdlib.h:49:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/fota_by_http.c:166:2: warning: implicit declaration of function 'Close_Socket' [-Wimplicit-function-declaration]
+In file included from custom/fota_by_http.c:66:0:
+custom/fota_by_http.c: At top level:
+custom/custom_common.h:285:12: warning: 'timeout_90S_monitor' defined but not used [-Wunused-variable]
+custom/fota_by_http.c: In function 'CallBack_UpgradeState_Ind':
+custom/fota_by_http.c:156:1: warning: control reaches end of non-void function [-Wreturn-type]
+In file included from custom/ServerDataHandle.c:9:0:
+custom/ServerDataHandle.h:7:0: warning: "COMM_VERSOIN" redefined [enabled by default]
+In file included from custom/custom_common.h:10:0,
+                 from custom/ServerDataHandle.c:8:
+custom/config.h:109:0: note: this is the location of the previous definition
+In file included from custom/ServerDataHandle.c:9:0:
+custom/ServerDataHandle.h:9:0: warning: "DEVICE_VERSOIN" redefined [enabled by default]
+In file included from custom/custom_common.h:10:0,
+                 from custom/ServerDataHandle.c:8:
+custom/config.h:53:0: note: this is the location of the previous definition
+In file included from custom/ServerDataHandle.c:9:0:
+custom/ServerDataHandle.h:42:0: warning: "COM_SET_ID_LEN" redefined [enabled by default]
+In file included from custom/custom_common.h:10:0,
+                 from custom/ServerDataHandle.c:8:
+custom/config.h:164:0: note: this is the location of the previous definition
+custom/ServerDataHandle.c: In function 'UpdataIP_Handle':
+custom/ServerDataHandle.c:414:4: warning: implicit declaration of function 'device_ParaSave' [-Wimplicit-function-declaration]
+custom/ServerDataHandle.c: In function '_GPRS_SendData':
+custom/ServerDataHandle.c:467:5: warning: unused variable 'ii' [-Wunused-variable]
+custom/ServerDataHandle.c: In function 'send_data_to_server':
+custom/ServerDataHandle.c:486:5: warning: unused variable 'err' [-Wunused-variable]
+custom/ServerDataHandle.c:485:5: warning: unused variable 'ii' [-Wunused-variable]
+custom/ServerDataHandle.c: In function 'send_data_to_server1':
+custom/ServerDataHandle.c:509:5: warning: unused variable 'err' [-Wunused-variable]
+In file included from custom/ServerDataHandle.c:8:0:
+custom/ServerDataHandle.c: At top level:
+custom/custom_common.h:285:12: warning: 'timeout_90S_monitor' defined but not used [-Wunused-variable]
+In file included from custom/tcpclient.c:78:0:
+custom/ServerDataHandle.h:7:0: warning: "COMM_VERSOIN" redefined [enabled by default]
+In file included from custom/custom_common.h:10:0,
+                 from custom/tcpclient.c:73:
+custom/config.h:109:0: note: this is the location of the previous definition
+In file included from custom/tcpclient.c:78:0:
+custom/ServerDataHandle.h:9:0: warning: "DEVICE_VERSOIN" redefined [enabled by default]
+In file included from custom/custom_common.h:10:0,
+                 from custom/tcpclient.c:73:
+custom/config.h:53:0: note: this is the location of the previous definition
+In file included from custom/tcpclient.c:78:0:
+custom/ServerDataHandle.h:42:0: warning: "COM_SET_ID_LEN" redefined [enabled by default]
+In file included from custom/custom_common.h:10:0,
+                 from custom/tcpclient.c:73:
+custom/config.h:164:0: note: this is the location of the previous definition
+custom/tcpclient.c: In function 'proc_main_task':
+custom/tcpclient.c:318:4: warning: implicit declaration of function 'device_Init' [-Wimplicit-function-declaration]
+custom/tcpclient.c:328:5: warning: implicit declaration of function 'set_bitFor' [-Wimplicit-function-declaration]
+custom/tcpclient.c:261:5: warning: unused variable 'firstwirteflag' [-Wunused-variable]
+custom/tcpclient.c: In function 'proc_handle':
+custom/tcpclient.c:394:2: warning: pointer targets in passing argument 1 of 'at_cmdProcess' differ in signedness [-Wpointer-sign]
+In file included from custom/tcpclient.c:77:0:
+custom/at_deviceCmd.h:87:8: note: expected 'u8 *' but argument is of type 'char *'
+custom/tcpclient.c:392:8: warning: unused variable 'srvport' [-Wunused-variable]
+custom/tcpclient.c:391:7: warning: unused variable 'iRet' [-Wunused-variable]
+custom/tcpclient.c:390:11: warning: unused variable 'p' [-Wunused-variable]
+custom/tcpclient.c: In function 'Callback_Timer':
+custom/tcpclient.c:449:6: warning: implicit declaration of function 'get_bitFor' [-Wimplicit-function-declaration]
+custom/tcpclient.c:469:5: warning: implicit declaration of function 'Device_Heart_Send' [-Wimplicit-function-declaration]
+custom/tcpclient.c:682:5: warning: passing argument 1 of 'RIL_NW_GetSignalQuality' from incompatible pointer type [enabled by default]
+In file included from custom/tcpclient.c:68:0:
+ril/inc/ril_network.h:122:6: note: expected 'u32 *' but argument is of type 'signed char *'
+custom/tcpclient.c:802:17: warning: pointer targets in passing argument 1 of 'Ql_IpHelper_ConvertIpAddr' differ in signedness [-Wpointer-sign]
+In file included from custom/tcpclient.c:65:0:
+include/ql_socket.h:540:5: note: expected 'u8 *' but argument is of type 'char *'
+custom/tcpclient.c:811:21: warning: pointer targets in passing argument 3 of 'Ql_IpHelper_GetIPByHostName' differ in signedness [-Wpointer-sign]
+In file included from custom/tcpclient.c:65:0:
+include/ql_socket.h:477:5: note: expected 'u8 *' but argument is of type 'char *'
+custom/tcpclient.c:428:16: warning: unused variable 'second' [-Wunused-variable]
+custom/tcpclient.c: In function 'callback_socket_read':
+custom/tcpclient.c:1202:4: warning: pointer targets in passing argument 2 of 'Ql_SOC_Recv' differ in signedness [-Wpointer-sign]
+In file included from custom/tcpclient.c:65:0:
+include/ql_socket.h:289:7: note: expected 'u8 *' but argument is of type 'char *'
+custom/tcpclient.c: In function 'GPRS_COPS_Check_Handler':
+custom/tcpclient.c:1356:9: warning: unused variable 'state2' [-Wunused-variable]
+custom/tcpclient.c:1355:9: warning: unused variable 'state1' [-Wunused-variable]
+custom/tcpclient.c:1354:8: warning: unused variable 'state' [-Wunused-variable]
+custom/tcpclient.c:1353:8: warning: unused variable 'n' [-Wunused-variable]
+custom/tcpclient.c: In function 'ATResponse_CREG_LOCATION_Handler':
+custom/tcpclient.c:1417:8: warning: unused variable 'state2' [-Wunused-variable]
+custom/tcpclient.c:1416:8: warning: unused variable 'state1' [-Wunused-variable]
+custom/tcpclient.c: In function 'GPRS_Loction_Check':
+custom/tcpclient.c:1456:5: warning: unused variable 'buf' [-Wunused-variable]
+custom/tcpclient.c:1455:6: warning: unused variable 'data' [-Wunused-variable]
+custom/tcpclient.c:1454:6: warning: unused variable 'State' [-Wunused-variable]
+custom/tcpclient.c: In function 'AfterServerReceiveAll':
+custom/tcpclient.c:1557:3: warning: implicit declaration of function 'Fota_Pro' [-Wimplicit-function-declaration]
+In file included from custom/tcpclient.c:77:0:
+custom/tcpclient.c: At top level:
+custom/at_deviceCmd.h:19:11: warning: 'at_cmdLine' defined but not used [-Wunused-variable]
+custom/tcpclient.c:125:11: warning: 'm_apn' defined but not used [-Wunused-variable]
+custom/tcpclient.c:126:11: warning: 'm_userid' defined but not used [-Wunused-variable]
+custom/tcpclient.c:127:11: warning: 'm_passwd' defined but not used [-Wunused-variable]
+custom/tcpclient.c:161:11: warning: 'open_COIN_UP_TIMER_ID_flag' defined but not used [-Wunused-variable]
+custom/tcpclient.c:242:13: warning: 's_iMutexId' defined but not used [-Wunused-variable]
+custom/tool.c: In function 'StrToHex':
+custom/tool.c:23:2: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+custom/tool.c:23:2: warning: incompatible implicit declaration of built-in function 'memset' [enabled by default]
+custom/tool.c:27:4: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+custom/tool.c:27:4: warning: incompatible implicit declaration of built-in function 'memcpy' [enabled by default]
+custom/tool.c:32:4: warning: incompatible implicit declaration of built-in function 'memcpy' [enabled by default]
+custom/tool.c:41:3: warning: implicit declaration of function 'toupper' [-Wimplicit-function-declaration]
+custom/fota/src/fota_http.c:46:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/fota/src/fota_http.c: In function 'HTTP_IsHttpServer':
+custom/fota/src/fota_http.c:63:5: warning: implicit declaration of function 'Ql_StrToUpper' [-Wimplicit-function-declaration]
+custom/fota/src/fota_http.c: In function 'HTTP_FotaMain':
+custom/fota/src/fota_http.c:94:5: warning: pointer targets in passing argument 1 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:2:0:
+include/ql_stdlib.h:45:7: note: expected 'char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http.c:94:5: warning: pointer targets in passing argument 2 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:2:0:
+include/ql_stdlib.h:45:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http.c:95:5: warning: pointer targets in passing argument 1 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:2:0:
+include/ql_stdlib.h:45:7: note: expected 'char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http.c:95:5: warning: pointer targets in passing argument 2 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:2:0:
+include/ql_stdlib.h:45:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http.c:96:5: warning: pointer targets in passing argument 1 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:2:0:
+include/ql_stdlib.h:45:7: note: expected 'char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http.c:96:5: warning: pointer targets in passing argument 2 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:2:0:
+include/ql_stdlib.h:45:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http.c:124:5: warning: pointer targets in passing argument 1 of 'Ql_strstr' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:2:0:
+include/ql_stdlib.h:53:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http.c:124:15: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+custom/fota/src/fota_http.c:128:9: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:2:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http.c:77:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_http.c: At top level:
+custom/fota/src/fota_http.c:216:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/fota/src/fota_http.c: In function 'http_GetImagefilefromServer':
+custom/fota/src/fota_http.c:219:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_http.c: In function 'http_SendHttpGetHead':
+custom/fota/src/fota_http.c:274:5: warning: pointer targets in passing argument 2 of 'Ql_strncpy' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:2:0:
+include/ql_stdlib.h:46:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http.c:276:5: warning: pointer targets in passing argument 2 of 'Ql_SOC_Send' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:5:0:
+include/ql_socket.h:265:7: note: expected 'u8 *' but argument is of type 'char *'
+custom/fota/src/fota_http.c:296:5: warning: pointer targets in passing argument 2 of 'Ql_SOC_Send' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:5:0:
+include/ql_socket.h:265:7: note: expected 'u8 *' but argument is of type 'char *'
+custom/fota/src/fota_http.c:306:5: warning: pointer targets in passing argument 2 of 'Ql_SOC_Send' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:5:0:
+include/ql_socket.h:265:7: note: expected 'u8 *' but argument is of type 'char *'
+custom/fota/src/fota_http.c:316:5: warning: pointer targets in passing argument 2 of 'Ql_SOC_Send' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:5:0:
+include/ql_socket.h:265:7: note: expected 'u8 *' but argument is of type 'char *'
+custom/fota/src/fota_http.c:326:5: warning: pointer targets in passing argument 2 of 'Ql_SOC_Send' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:5:0:
+include/ql_socket.h:265:7: note: expected 'u8 *' but argument is of type 'char *'
+custom/fota/src/fota_http.c:336:5: warning: pointer targets in passing argument 2 of 'Ql_SOC_Send' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http.c:5:0:
+include/ql_socket.h:265:7: note: expected 'u8 *' but argument is of type 'char *'
+custom/fota/src/fota_http.c:266:9: warning: unused variable 'retValue' [-Wunused-variable]
+custom/fota/src/fota_http.c: In function 'http_RecvHttpHead':
+custom/fota/src/fota_http.c:359:10: warning: unused variable 'entryfunctionexe' [-Wunused-variable]
+custom/fota/src/fota_http.c: In function 'http_RecvHttpChunkedBody':
+custom/fota/src/fota_http.c:500:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_http.c: In function 'Httpcallback_socket_read':
+custom/fota/src/fota_http.c:638:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_http.c: In function 'Callback_GetIpByHostName':
+custom/fota/src/fota_http.c:724:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_http.c: In function 'http_TimerCallback':
+custom/fota/src/fota_http.c:746:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_http.c: In function 'http_RecvHttpBody':
+custom/fota/src/fota_http.c:576:31: warning: 'fileDLpresentReport' may be used uninitialized in this function [-Wmaybe-uninitialized]
+custom/fota/src/fota_http.c:607:40: warning: 'retValue' may be used uninitialized in this function [-Wmaybe-uninitialized]
+custom/fota/src/fota_http_code.c: In function 'DecodeHttpResult':
+custom/fota/src/fota_http_code.c:72:13: warning: pointer targets in passing argument 1 of 'Ql_atoi' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http_code.c:1:0:
+include/ql_stdlib.h:39:8: note: expected 'const char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http_code.c: In function 'http_DecodeURL':
+custom/fota/src/fota_http_code.c:144:9: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http_code.c:1:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http_code.c:144:9: warning: pointer targets in passing argument 1 of 'http_ip_check' differ in signedness [-Wpointer-sign]
+custom/fota/src/fota_http_code.c:49:6: note: expected 'char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http_code.c:189:13: warning: pointer targets in passing argument 1 of 'Ql_atoi' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http_code.c:1:0:
+include/ql_stdlib.h:39:8: note: expected 'const char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http_code.c:100:10: warning: unused variable 'ip_validity' [-Wunused-variable]
+custom/fota/src/fota_http_code.c:98:8: warning: unused variable 'ipadd' [-Wunused-variable]
+custom/fota/src/fota_http_code.c: In function 'DecodeHttpLine':
+custom/fota/src/fota_http_code.c:296:9: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+custom/fota/src/fota_http_code.c:306:9: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+custom/fota/src/fota_http_code.c:306:9: warning: pointer targets in passing argument 1 of 'Ql_atoi' differ in signedness [-Wpointer-sign]
+In file included from custom/fota/src/fota_http_code.c:1:0:
+include/ql_stdlib.h:39:8: note: expected 'const char *' but argument is of type 'u8 *'
+custom/fota/src/fota_http_code.c: In function 'http_DecodeHeader':
+custom/fota/src/fota_http_code.c:375:9: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+custom/fota/src/fota_http_code.c:381:9: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+custom/fota/src/fota_http_code.c:361:28: warning: unused variable 'httpContext_p' [-Wunused-variable]
+custom/fota/src/fota_http_code.c:358:9: warning: unused variable 'startpos' [-Wunused-variable]
+custom/fota/src/fota_main.c: In function 'Ql_FOTA_StartUpgrade':
+custom/fota/src/fota_main.c:35:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
