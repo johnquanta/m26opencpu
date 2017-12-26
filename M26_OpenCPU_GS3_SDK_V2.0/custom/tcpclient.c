@@ -77,6 +77,9 @@
 #include "at_deviceCmd.h"
 #include "ServerDataHandle.h" 
 
+#include "module_sms.h" //20171226//
+
+
 
 #define MSG_ID_USER_DATA                MSG_ID_USER_START+0x100
 #define MSG_ID_MUTEX_TEST               MSG_ID_USER_START+0x101
@@ -253,6 +256,111 @@ void Soft_Restart(void)
 
 
 
+void module_sms_proc_main_task(s32 iTaskID)//20171226//void proc_main_task(s32 iTaskID)
+{
+    s32 iResult = 0;
+    ST_MSG taskMsg;
+
+    //Register & open UART port
+    //20171226//InitSerialPort();
+    
+    APP_DEBUG("OpenCPU: SMS Example\r\n");
+
+    // START MESSAGE LOOP OF THIS TASK
+    while (TRUE) 
+    {
+        s32 i = 0;
+    
+        Ql_memset(&taskMsg, 0x0, sizeof(ST_MSG));
+        Ql_OS_GetMessage(&taskMsg);
+        switch (taskMsg.message)
+        {
+        case MSG_ID_RIL_READY:
+            {
+                APP_DEBUG("<-- RIL is ready -->\r\n");
+                Ql_RIL_Initialize(); // MUST call this function
+
+                for(i = 0; i < CON_SMS_BUF_MAX_CNT; i++)
+                {
+                    ConSMSBuf_ResetCtx(g_asConSMSBuf,CON_SMS_BUF_MAX_CNT,i);
+                }
+                
+                break;
+            }
+        case MSG_ID_URC_INDICATION:
+            switch (taskMsg.param1)
+            {
+            case URC_SYS_INIT_STATE_IND:
+                {
+                    APP_DEBUG("<-- Sys Init Status %d -->\r\n", taskMsg.param2);
+                    if (SYS_STATE_SMSOK == taskMsg.param2)
+                    {
+                        APP_DEBUG("\r\n<-- SMS module is ready -->\r\n");
+                        APP_DEBUG("\r\n<-- Initialize SMS-related options -->\r\n");
+                        iResult = SMS_Initialize();         
+                        if (!iResult)
+                        {
+                            APP_DEBUG("Fail to initialize SMS\r\n");
+                        }
+
+                        SMS_TextMode_Send();
+                    }
+                    break;
+                }
+            case URC_SIM_CARD_STATE_IND:
+                {
+                    APP_DEBUG("\r\n<-- SIM Card Status:%d -->\r\n", taskMsg.param2);
+                }
+                break;
+
+            case URC_GSM_NW_STATE_IND:
+                {
+                    APP_DEBUG("\r\n<-- GSM Network Status:%d -->\r\n", taskMsg.param2);
+                    break;
+                }
+
+            case URC_GPRS_NW_STATE_IND:
+                {
+                    APP_DEBUG("\r\n<-- GPRS Network Status:%d -->\r\n", taskMsg.param2);
+                    break;
+                }
+
+            case URC_CFUN_STATE_IND:
+                {
+                    APP_DEBUG("\r\n<-- CFUN Status:%d -->\r\n", taskMsg.param2);
+                    break;
+                }
+
+            case URC_COMING_CALL_IND:
+                {
+                    ST_ComingCall* pComingCall = (ST_ComingCall*)(taskMsg.param2);
+                    APP_DEBUG("\r\n<-- Coming call, number:%s, type:%d -->\r\n", pComingCall->phoneNumber, pComingCall->type);
+                    break;
+               }
+
+            case URC_NEW_SMS_IND:
+                {
+                    APP_DEBUG("\r\n<-- New SMS Arrives: index=%d\r\n", taskMsg.param2);
+                    Hdlr_RecvNewSMS((taskMsg.param2), FALSE);
+                    break;
+                }
+
+            case URC_MODULE_VOLTAGE_IND:
+                {
+                    APP_DEBUG("\r\n<-- VBatt Voltage Ind: type=%d\r\n", taskMsg.param2);
+                    break;
+                }
+
+            default:
+                break;
+            }
+            break;
+
+        default:
+            break;
+        }
+    }
+}
 
 
 void proc_main_task(s32 taskId)
@@ -289,8 +397,8 @@ void proc_main_task(s32 taskId)
     timeout_90S_monitor = FALSE;
 
     Ql_Timer_Register( COIN_IN_TIMER_ID, Callback_CoinInPulseCheck, NULL );
-   Ql_Timer_Start( COIN_IN_TIMER_ID, COIN_IN_TIMER_PERIOD, TRUE);
-   Ql_Timer_RegisterFast( COIN_UP_TIMER_ID, Callback_CoinUpPulseOut, NULL );
+    Ql_Timer_Start( COIN_IN_TIMER_ID, COIN_IN_TIMER_PERIOD, TRUE);
+    Ql_Timer_RegisterFast( COIN_UP_TIMER_ID, Callback_CoinUpPulseOut, NULL );
 
 	//Ql_Timer_Register( COIN_UP_TIMER_ID, Callback_CoinUpPulseOut, NULL );
     Ql_Timer_Start( COIN_UP_TIMER_ID, COIN_UP_TIMER_PERIOD, TRUE);
@@ -319,6 +427,8 @@ void proc_main_task(s32 taskId)
             bill_Read();
 			Ql_memcpy(&handleData,&device,sizeof(CommTaskData_sut));
 			FLAG.Ready=1;
+			
+            smsIni();//20171226//
 
 			APP_DEBUG("<--device.commTaskData.id:%s -->\r\n",device.commTaskData.id);
 			APP_DEBUG("<--device.commTaskData.password:%s -->\r\n",device.commTaskData.password);
@@ -330,6 +440,81 @@ void proc_main_task(s32 taskId)
 			FLAG.Linked=0;
 
             break;
+
+			#if 1//20171226//
+		case MSG_ID_URC_INDICATION:
+					switch (msg.param1)
+					{
+					case URC_SYS_INIT_STATE_IND:
+						{
+							APP_DEBUG("<-- Sys Init Status %d -->\r\n", msg.param2);
+							if (SYS_STATE_SMSOK == msg.param2)
+							{
+							    s32 iResult = 0;//20171226//
+								
+								APP_DEBUG("\r\n<-- SMS module is ready -->\r\n");
+								APP_DEBUG("\r\n<-- Initialize SMS-related options -->\r\n");
+								iResult = SMS_Initialize(); 		
+								if (!iResult)
+								{
+									APP_DEBUG("Fail to initialize SMS\r\n");
+								}
+		
+								SMS_TextMode_Send();
+							}
+							break;
+						}
+					case URC_SIM_CARD_STATE_IND:
+						{
+							APP_DEBUG("\r\n<-- SIM Card Status:%d -->\r\n", msg.param2);
+						}
+						break;
+		
+					case URC_GSM_NW_STATE_IND:
+						{
+							APP_DEBUG("\r\n<-- GSM Network Status:%d -->\r\n", msg.param2);
+							break;
+						}
+		
+					case URC_GPRS_NW_STATE_IND:
+						{
+							APP_DEBUG("\r\n<-- GPRS Network Status:%d -->\r\n", msg.param2);
+							break;
+						}
+		
+					case URC_CFUN_STATE_IND:
+						{
+							APP_DEBUG("\r\n<-- CFUN Status:%d -->\r\n", msg.param2);
+							break;
+						}
+		
+					case URC_COMING_CALL_IND:
+						{
+							ST_ComingCall* pComingCall = (ST_ComingCall*)(msg.param2);
+							APP_DEBUG("\r\n<-- Coming call, number:%s, type:%d -->\r\n", pComingCall->phoneNumber, pComingCall->type);
+							break;
+					   }
+		
+					case URC_NEW_SMS_IND:
+						{
+							APP_DEBUG("\r\n<-- New SMS Arrives: index=%d\r\n", msg.param2);
+							Hdlr_RecvNewSMS((msg.param2), FALSE);
+							break;
+						}
+		
+					case URC_MODULE_VOLTAGE_IND:
+						{
+							APP_DEBUG("\r\n<-- VBatt Voltage Ind: type=%d\r\n", msg.param2);
+							break;
+						}
+		
+					default:
+						break;
+					}
+					break;
+
+
+			#endif
 #endif
         default:
             break;
@@ -450,7 +635,7 @@ static void Callback_Timer( u32 timerId, void* param )
 		   {
 				if(FLAG.deviceSendBackup>0)
 				{
-				 APP_DEBUG("\r\n<-- FLAG.deviceSendBackup=%d-->\r\n",FLAG.deviceSendBackup);
+				    //20171225//APP_DEBUG("\r\n<-- FLAG.deviceSendBackup=%d-->\r\n",FLAG.deviceSendBackup);
 
 					FLAG.deviceSendBackup--;
 					if(FLAG.deviceSendBackup==0)
@@ -477,7 +662,7 @@ static void Callback_Timer( u32 timerId, void* param )
 		   {
 			   handleData.linkTime--;
 			   
-			   APP_DEBUG("<--handleData.reConntInterval=%d-->\r\n",handleData.linkTime);
+			   //20171225//APP_DEBUG("<--handleData.reConntInterval=%d-->\r\n",handleData.linkTime);
 			   
 			   if(handleData.linkTime==0)
 			   {
@@ -931,7 +1116,7 @@ static void Callback_Timer( u32 timerId, void* param )
 			    }
 				if( ServerDataBuff.txHead != ServerDataBuff.txTail )  // ??
 			    {    		        
-			        APP_DEBUG("<--- txHead=%d,txTail=%d --->\r\n",ServerDataBuff.txHead, ServerDataBuff.txTail );
+			        //20171226//APP_DEBUG("<--- txHead=%d,txTail=%d --->\r\n",ServerDataBuff.txHead, ServerDataBuff.txTail );
 				    if( ServerDataBuff.txHead > ServerDataBuff.txTail )
 				    {
 				        m_remain_len = HAL_TCP_TX_MAX - ServerDataBuff.txHead;
@@ -987,7 +1172,7 @@ static void Callback_Timer( u32 timerId, void* param )
                         timeout_90S_monitor = TRUE;
                     }
                     
-                    APP_DEBUG("<-- ACK Number:%llu/%llu from socket[%d] -->\r\n", ackedNumCurr, m_nSentLen, m_socketid);
+                    //20171226//APP_DEBUG("<-- ACK Number:%llu/%llu from socket[%d] -->\r\n", ackedNumCurr, m_nSentLen, m_socketid);
                 }
 				#else
 				{
@@ -1142,8 +1327,8 @@ void callback_socket_read(s32 socketId, s32 errCode, void* customParam )
       {  
            
 		LED_STATE=SERVER_LINK;
-		APP_DEBUG("LED_STATE=%d\r\n",SERVER_LINK);
-		APP_DEBUG("THE LED IS WORKING STATE\r\n");
+		//20171226//APP_DEBUG("LED_STATE=%d\r\n",SERVER_LINK);
+		//20171226//APP_DEBUG("THE LED IS WORKING STATE\r\n");
 	    do 
 		{
 		    u16 rxLen = 0;
@@ -1165,7 +1350,7 @@ void callback_socket_read(s32 socketId, s32 errCode, void* customParam )
 
 			if( 0 != ret )
 			{
-				APP_DEBUG("<<<-- Once receive done,ret=%d--rxHead=%d--rxTail=%d-->>>\r\n", ret, ServerDataBuff.rxHead, ServerDataBuff.rxTail ); 
+				//20171226//APP_DEBUG("<<<-- Once receive done,ret=%d--rxHead=%d--rxTail=%d-->>>\r\n", ret, ServerDataBuff.rxHead, ServerDataBuff.rxTail ); 
 			}
 	        				
 			if((ret < 0) && (ret != -2))
@@ -1280,18 +1465,19 @@ static void SocketSendData(void)
 	do
 	{
 		ret = Ql_SOC_Send(m_socketid, ServerDataBuff.txBuf+ServerDataBuff.txHead, m_remain_len);
-		APP_DEBUG("ServerDataBuff.txHead is %d",ServerDataBuff.txHead);
-		APP_DEBUG("the data to be sended is");
+		//20171226//APP_DEBUG("ServerDataBuff.txHead is %d",ServerDataBuff.txHead);
+		//20171226//APP_DEBUG("the data to be sended is");
 
-            for(int ii=0;ii<m_remain_len;ii++)
-            {
-				APP_DEBUG(" %0.2x  ",ServerDataBuff.txBuf[ServerDataBuff.txHead+ii]);
+		//20171226//APP_DEBUG("==>SocketSendData:");//20171226//
 
-			}
+            //20171226//for(int ii=0;ii<m_remain_len;ii++)
+            //20171226//{
+			    //20171226//APP_DEBUG("%02X ",ServerDataBuff.txBuf[ServerDataBuff.txHead+ii]);
+			//20171226//}
 		
-		APP_DEBUG("\r\n");
+		//20171226//APP_DEBUG(",len=%d bytes\r\n",m_remain_len);//20171226//APP_DEBUG("\r\n");
 		
-		APP_DEBUG("<--Send data,socketid=%d,number of bytes sent=%d-->\r\n",m_socketid,ret);   
+		//20171226//APP_DEBUG("<--Send data,socketid=%d,number of bytes sent=%d-->\r\n",m_socketid,ret);   
 		
 		if(ret == m_remain_len)//send compelete
 		{

@@ -4,7 +4,17 @@
 #define __SERVERDATAHANDLE_H  
 
 /**************************************************************************/
+#ifdef COMM_VERSOIN //20171226//
+#undef COMM_VERSOIN  //20171226//
+#endif
+
 #define COMM_VERSOIN      2017060901//2017011901    //communication version.
+
+
+#ifdef DEVICE_VERSOIN //20171226//
+#undef DEVICE_VERSOIN  //20171226//
+#endif
+
 /*solid version. (1)hardware version. (2)industry version. (3)main software version. (4)software version.*/
 #define DEVICE_VERSOIN   ((7<<24)|(1<<16)|(1<<8)|1)  
 /***TEST***/
@@ -35,7 +45,9 @@
 
 #define COM_LOGIN_LEN	    34
 #define COM_LOGIN_RES_LEN	10
+#ifndef COM_COIN_LEN//20171226//
 #define COM_COIN_LEN	    10
+#endif
 #define COM_SET_LEN	        10
 #define COM_STATE_LEN	    10
 #define COM_COIN_IN_LEN	    18
@@ -44,7 +56,7 @@
 #define COM_CMD_LEN	   		18
 #define COM_FOTA_LEN	    10
 
-#define COM_RSV_MAX_LEN     24   //GPRSÊÕµ½Ò»°üÊý¾Ý×î³¤µÄ³¤¶È¡
+#define COM_RSV_MAX_LEN     24   //GPRSÊÕµ½Ò»°üÊý¾Ý×î³¤µÄ³¤¶È?
 #define COM_RSV_MIN_LEN     10
 #define COM_ANSWER_MAX_LEN  COM_LOGIN_LEN    //Êý¾Ý·µ»Ø×î³¤×Ö½Ú¡£
 #define COM_ANSWER_MIN_LEN	10

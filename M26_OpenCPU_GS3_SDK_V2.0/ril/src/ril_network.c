@@ -502,7 +502,7 @@ static s32 ATRsp_COPS_Handler(char* line, u32 len, void* param)
     char* pHead = Ql_RIL_FindString(line, len, "+COPS:"); //continue wait
     if (pHead)
     {
-        char str[100] = {0};
+        //20171225//char str[100] = {0};
         char *p = NULL;
         char *q = NULL; 
         p = pHead + Ql_strlen("+COPS: ");

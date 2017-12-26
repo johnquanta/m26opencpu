@@ -1528,7 +1528,7 @@ void OnURCHandler_BTDisconn(const char* strURC, void* reserved)
     char urcHead[30];
     s32  connId;
     s32  pairedId;
-    s32  profileId;
+    //20171225//s32  profileId;
     s32 err_code = 0;
     char profile_name[40] = {0};    
     

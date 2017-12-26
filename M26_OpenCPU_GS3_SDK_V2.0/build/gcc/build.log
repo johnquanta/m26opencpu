@@ -1,11 +1,3 @@
-ril/src/ril_atResponse.c: In function 'Ql_RIL_AT_SetErrCode':
-ril/src/ril_atResponse.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
-ril/src/ril_audio.c: In function 'ATResponse_AUD_handler':
-ril/src/ril_audio.c:399:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-ril/src/ril_bluetooth.c: In function 'OnURCHandler_BTDisconn':
-ril/src/ril_bluetooth.c:1531:10: warning: unused variable 'profileId' [-Wunused-variable]
-ril/src/ril_network.c: In function 'ATRsp_COPS_Handler':
-ril/src/ril_network.c:505:14: warning: unused variable 'str' [-Wunused-variable]
 example/nema_pro.c: In function 'read_gps_I2C_buffer':
 example/nema_pro.c:170:9: warning: unused variable 'realwrlen' [-Wunused-variable]
 example/nema_pro.c: In function 'extract_nmea':
@@ -30,17 +22,7 @@ example/utility.c: In function 'Analyse_Command':
 example/utility.c:103:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
 example/utility.c:120:17: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
 In file included from custom/analysePackage.c:7:0:
-custom/ServerDataHandle.h:7:0: warning: "COMM_VERSOIN" redefined [enabled by default]
-In file included from custom/custom_common.h:10:0,
-                 from custom/analysePackage.c:6:
-custom/config.h:109:0: note: this is the location of the previous definition
-In file included from custom/analysePackage.c:7:0:
-custom/ServerDataHandle.h:9:0: warning: "DEVICE_VERSOIN" redefined [enabled by default]
-In file included from custom/custom_common.h:10:0,
-                 from custom/analysePackage.c:6:
-custom/config.h:53:0: note: this is the location of the previous definition
-In file included from custom/analysePackage.c:7:0:
-custom/ServerDataHandle.h:42:0: warning: "COM_SET_ID_LEN" redefined [enabled by default]
+custom/ServerDataHandle.h:54:0: warning: "COM_SET_ID_LEN" redefined [enabled by default]
 In file included from custom/custom_common.h:10:0,
                  from custom/analysePackage.c:6:
 custom/config.h:164:0: note: this is the location of the previous definition
@@ -119,17 +101,7 @@ custom/DES.c:146:8: warning: array subscript has type 'char' [-Wchar-subscripts]
 custom/ee2prom.c: In function 'I2CWriteByte':
 custom/ee2prom.c:77:1: warning: control reaches end of non-void function [-Wreturn-type]
 In file included from custom/fota_by_http.c:67:0:
-custom/ServerDataHandle.h:7:0: warning: "COMM_VERSOIN" redefined [enabled by default]
-In file included from custom/custom_common.h:10:0,
-                 from custom/fota_by_http.c:66:
-custom/config.h:109:0: note: this is the location of the previous definition
-In file included from custom/fota_by_http.c:67:0:
-custom/ServerDataHandle.h:9:0: warning: "DEVICE_VERSOIN" redefined [enabled by default]
-In file included from custom/custom_common.h:10:0,
-                 from custom/fota_by_http.c:66:
-custom/config.h:53:0: note: this is the location of the previous definition
-In file included from custom/fota_by_http.c:67:0:
-custom/ServerDataHandle.h:42:0: warning: "COM_SET_ID_LEN" redefined [enabled by default]
+custom/ServerDataHandle.h:54:0: warning: "COM_SET_ID_LEN" redefined [enabled by default]
 In file included from custom/custom_common.h:10:0,
                  from custom/fota_by_http.c:66:
 custom/config.h:164:0: note: this is the location of the previous definition
@@ -147,97 +119,124 @@ custom/custom_common.h:285:12: warning: 'timeout_90S_monitor' defined but not us
 custom/fota_by_http.c: In function 'CallBack_UpgradeState_Ind':
 custom/fota_by_http.c:156:1: warning: control reaches end of non-void function [-Wreturn-type]
 In file included from custom/ServerDataHandle.c:9:0:
-custom/ServerDataHandle.h:7:0: warning: "COMM_VERSOIN" redefined [enabled by default]
-In file included from custom/custom_common.h:10:0,
-                 from custom/ServerDataHandle.c:8:
-custom/config.h:109:0: note: this is the location of the previous definition
-In file included from custom/ServerDataHandle.c:9:0:
-custom/ServerDataHandle.h:9:0: warning: "DEVICE_VERSOIN" redefined [enabled by default]
-In file included from custom/custom_common.h:10:0,
-                 from custom/ServerDataHandle.c:8:
-custom/config.h:53:0: note: this is the location of the previous definition
-In file included from custom/ServerDataHandle.c:9:0:
-custom/ServerDataHandle.h:42:0: warning: "COM_SET_ID_LEN" redefined [enabled by default]
+custom/ServerDataHandle.h:54:0: warning: "COM_SET_ID_LEN" redefined [enabled by default]
 In file included from custom/custom_common.h:10:0,
                  from custom/ServerDataHandle.c:8:
 custom/config.h:164:0: note: this is the location of the previous definition
-custom/ServerDataHandle.c: In function 'UpdataIP_Handle':
-custom/ServerDataHandle.c:414:4: warning: implicit declaration of function 'device_ParaSave' [-Wimplicit-function-declaration]
-custom/ServerDataHandle.c: In function '_GPRS_SendData':
-custom/ServerDataHandle.c:467:5: warning: unused variable 'ii' [-Wunused-variable]
-custom/ServerDataHandle.c: In function 'send_data_to_server':
-custom/ServerDataHandle.c:486:5: warning: unused variable 'err' [-Wunused-variable]
-custom/ServerDataHandle.c:485:5: warning: unused variable 'ii' [-Wunused-variable]
-custom/ServerDataHandle.c: In function 'send_data_to_server1':
-custom/ServerDataHandle.c:509:5: warning: unused variable 'err' [-Wunused-variable]
 In file included from custom/ServerDataHandle.c:8:0:
-custom/ServerDataHandle.c: At top level:
 custom/custom_common.h:285:12: warning: 'timeout_90S_monitor' defined but not used [-Wunused-variable]
 In file included from custom/tcpclient.c:78:0:
-custom/ServerDataHandle.h:7:0: warning: "COMM_VERSOIN" redefined [enabled by default]
-In file included from custom/custom_common.h:10:0,
-                 from custom/tcpclient.c:73:
-custom/config.h:109:0: note: this is the location of the previous definition
-In file included from custom/tcpclient.c:78:0:
-custom/ServerDataHandle.h:9:0: warning: "DEVICE_VERSOIN" redefined [enabled by default]
-In file included from custom/custom_common.h:10:0,
-                 from custom/tcpclient.c:73:
-custom/config.h:53:0: note: this is the location of the previous definition
-In file included from custom/tcpclient.c:78:0:
-custom/ServerDataHandle.h:42:0: warning: "COM_SET_ID_LEN" redefined [enabled by default]
+custom/ServerDataHandle.h:54:0: warning: "COM_SET_ID_LEN" redefined [enabled by default]
 In file included from custom/custom_common.h:10:0,
                  from custom/tcpclient.c:73:
 custom/config.h:164:0: note: this is the location of the previous definition
+In file included from custom/tcpclient.c:80:0:
+custom/module_sms.h:54:0: warning: "APP_DEBUG" redefined [enabled by default]
+In file included from custom/tcpclient.c:73:0:
+custom/custom_common.h:253:0: note: this is the location of the previous definition
+In file included from custom/tcpclient.c:80:0:
+custom/module_sms.h: In function 'SMS_Initialize':
+custom/module_sms.h:336:9: warning: unused variable 'nTotal' [-Wunused-variable]
+custom/module_sms.h:335:9: warning: unused variable 'nUsed' [-Wunused-variable]
+custom/module_sms.h:334:9: warning: unused variable 'nCurrStorage' [-Wunused-variable]
+custom/module_sms.h: In function 'SMS_TextMode_Read':
+custom/module_sms.h:393:29: warning: unused variable 'pSubmitTextInfo' [-Wunused-variable]
+In file included from custom/tcpclient.c:80:0:
+custom/module_sms.h: In function 'SMS_TextMode_Send':
+custom/module_sms.h:486:5: warning: pointer targets in passing argument 4 of 'RIL_SMS_SendSMS_Text' differ in signedness [-Wpointer-sign]
+In file included from custom/module_sms.h:35:0,
+                 from custom/tcpclient.c:80:
+ril/inc/ril_sms.h:316:12: note: expected 'u8 *' but argument is of type 'char *'
+In file included from custom/tcpclient.c:80:0:
+custom/module_sms.h:503:5: warning: pointer targets in passing argument 4 of 'RIL_SMS_SendSMS_Text_Ext' differ in signedness [-Wpointer-sign]
+In file included from custom/module_sms.h:35:0,
+                 from custom/tcpclient.c:80:
+ril/inc/ril_sms.h:354:12: note: expected 'u8 *' but argument is of type 'char *'
+In file included from custom/tcpclient.c:80:0:
+custom/module_sms.h:528:5: warning: pointer targets in passing argument 4 of 'RIL_SMS_SendSMS_Text_Ext' differ in signedness [-Wpointer-sign]
+In file included from custom/module_sms.h:35:0,
+                 from custom/tcpclient.c:80:
+ril/inc/ril_sms.h:354:12: note: expected 'u8 *' but argument is of type 'char *'
+In file included from custom/tcpclient.c:80:0:
+custom/module_sms.h:553:5: warning: pointer targets in passing argument 4 of 'RIL_SMS_SendSMS_Text_Ext' differ in signedness [-Wpointer-sign]
+In file included from custom/module_sms.h:35:0,
+                 from custom/tcpclient.c:80:
+ril/inc/ril_sms.h:354:12: note: expected 'u8 *' but argument is of type 'char *'
+In file included from custom/tcpclient.c:80:0:
+custom/module_sms.h:578:5: warning: pointer targets in passing argument 4 of 'RIL_SMS_SendSMS_Text_Ext' differ in signedness [-Wpointer-sign]
+In file included from custom/module_sms.h:35:0,
+                 from custom/tcpclient.c:80:
+ril/inc/ril_sms.h:354:12: note: expected 'u8 *' but argument is of type 'char *'
+In file included from custom/tcpclient.c:80:0:
+custom/module_sms.h:610:5: warning: pointer targets in passing argument 4 of 'RIL_SMS_SendSMS_Text_Ext' differ in signedness [-Wpointer-sign]
+In file included from custom/module_sms.h:35:0,
+                 from custom/tcpclient.c:80:
+ril/inc/ril_sms.h:354:12: note: expected 'u8 *' but argument is of type 'char *'
+In file included from custom/tcpclient.c:80:0:
+custom/module_sms.h:635:5: warning: pointer targets in passing argument 4 of 'RIL_SMS_SendSMS_Text_Ext' differ in signedness [-Wpointer-sign]
+In file included from custom/module_sms.h:35:0,
+                 from custom/tcpclient.c:80:
+ril/inc/ril_sms.h:354:12: note: expected 'u8 *' but argument is of type 'char *'
+In file included from custom/tcpclient.c:80:0:
+custom/module_sms.h:660:5: warning: pointer targets in passing argument 4 of 'RIL_SMS_SendSMS_Text_Ext' differ in signedness [-Wpointer-sign]
+In file included from custom/module_sms.h:35:0,
+                 from custom/tcpclient.c:80:
+ril/inc/ril_sms.h:354:12: note: expected 'u8 *' but argument is of type 'char *'
 custom/tcpclient.c: In function 'proc_main_task':
-custom/tcpclient.c:318:4: warning: implicit declaration of function 'device_Init' [-Wimplicit-function-declaration]
-custom/tcpclient.c:328:5: warning: implicit declaration of function 'set_bitFor' [-Wimplicit-function-declaration]
-custom/tcpclient.c:261:5: warning: unused variable 'firstwirteflag' [-Wunused-variable]
+custom/tcpclient.c:426:4: warning: implicit declaration of function 'device_Init' [-Wimplicit-function-declaration]
+custom/tcpclient.c:438:5: warning: implicit declaration of function 'set_bitFor' [-Wimplicit-function-declaration]
+custom/tcpclient.c:369:5: warning: unused variable 'firstwirteflag' [-Wunused-variable]
 custom/tcpclient.c: In function 'proc_handle':
-custom/tcpclient.c:394:2: warning: pointer targets in passing argument 1 of 'at_cmdProcess' differ in signedness [-Wpointer-sign]
+custom/tcpclient.c:579:2: warning: pointer targets in passing argument 1 of 'at_cmdProcess' differ in signedness [-Wpointer-sign]
 In file included from custom/tcpclient.c:77:0:
 custom/at_deviceCmd.h:87:8: note: expected 'u8 *' but argument is of type 'char *'
-custom/tcpclient.c:392:8: warning: unused variable 'srvport' [-Wunused-variable]
-custom/tcpclient.c:391:7: warning: unused variable 'iRet' [-Wunused-variable]
-custom/tcpclient.c:390:11: warning: unused variable 'p' [-Wunused-variable]
+custom/tcpclient.c:577:8: warning: unused variable 'srvport' [-Wunused-variable]
+custom/tcpclient.c:576:7: warning: unused variable 'iRet' [-Wunused-variable]
+custom/tcpclient.c:575:11: warning: unused variable 'p' [-Wunused-variable]
 custom/tcpclient.c: In function 'Callback_Timer':
-custom/tcpclient.c:449:6: warning: implicit declaration of function 'get_bitFor' [-Wimplicit-function-declaration]
-custom/tcpclient.c:469:5: warning: implicit declaration of function 'Device_Heart_Send' [-Wimplicit-function-declaration]
-custom/tcpclient.c:682:5: warning: passing argument 1 of 'RIL_NW_GetSignalQuality' from incompatible pointer type [enabled by default]
+custom/tcpclient.c:634:6: warning: implicit declaration of function 'get_bitFor' [-Wimplicit-function-declaration]
+custom/tcpclient.c:654:5: warning: implicit declaration of function 'Device_Heart_Send' [-Wimplicit-function-declaration]
+custom/tcpclient.c:867:5: warning: passing argument 1 of 'RIL_NW_GetSignalQuality' from incompatible pointer type [enabled by default]
 In file included from custom/tcpclient.c:68:0:
 ril/inc/ril_network.h:122:6: note: expected 'u32 *' but argument is of type 'signed char *'
-custom/tcpclient.c:802:17: warning: pointer targets in passing argument 1 of 'Ql_IpHelper_ConvertIpAddr' differ in signedness [-Wpointer-sign]
+custom/tcpclient.c:987:17: warning: pointer targets in passing argument 1 of 'Ql_IpHelper_ConvertIpAddr' differ in signedness [-Wpointer-sign]
 In file included from custom/tcpclient.c:65:0:
 include/ql_socket.h:540:5: note: expected 'u8 *' but argument is of type 'char *'
-custom/tcpclient.c:811:21: warning: pointer targets in passing argument 3 of 'Ql_IpHelper_GetIPByHostName' differ in signedness [-Wpointer-sign]
+custom/tcpclient.c:996:21: warning: pointer targets in passing argument 3 of 'Ql_IpHelper_GetIPByHostName' differ in signedness [-Wpointer-sign]
 In file included from custom/tcpclient.c:65:0:
 include/ql_socket.h:477:5: note: expected 'u8 *' but argument is of type 'char *'
-custom/tcpclient.c:428:16: warning: unused variable 'second' [-Wunused-variable]
+custom/tcpclient.c:613:16: warning: unused variable 'second' [-Wunused-variable]
 custom/tcpclient.c: In function 'callback_socket_read':
-custom/tcpclient.c:1202:4: warning: pointer targets in passing argument 2 of 'Ql_SOC_Recv' differ in signedness [-Wpointer-sign]
+custom/tcpclient.c:1387:4: warning: pointer targets in passing argument 2 of 'Ql_SOC_Recv' differ in signedness [-Wpointer-sign]
 In file included from custom/tcpclient.c:65:0:
 include/ql_socket.h:289:7: note: expected 'u8 *' but argument is of type 'char *'
 custom/tcpclient.c: In function 'GPRS_COPS_Check_Handler':
-custom/tcpclient.c:1356:9: warning: unused variable 'state2' [-Wunused-variable]
-custom/tcpclient.c:1355:9: warning: unused variable 'state1' [-Wunused-variable]
-custom/tcpclient.c:1354:8: warning: unused variable 'state' [-Wunused-variable]
-custom/tcpclient.c:1353:8: warning: unused variable 'n' [-Wunused-variable]
+custom/tcpclient.c:1542:9: warning: unused variable 'state2' [-Wunused-variable]
+custom/tcpclient.c:1541:9: warning: unused variable 'state1' [-Wunused-variable]
+custom/tcpclient.c:1540:8: warning: unused variable 'state' [-Wunused-variable]
+custom/tcpclient.c:1539:8: warning: unused variable 'n' [-Wunused-variable]
 custom/tcpclient.c: In function 'ATResponse_CREG_LOCATION_Handler':
-custom/tcpclient.c:1417:8: warning: unused variable 'state2' [-Wunused-variable]
-custom/tcpclient.c:1416:8: warning: unused variable 'state1' [-Wunused-variable]
+custom/tcpclient.c:1603:8: warning: unused variable 'state2' [-Wunused-variable]
+custom/tcpclient.c:1602:8: warning: unused variable 'state1' [-Wunused-variable]
 custom/tcpclient.c: In function 'GPRS_Loction_Check':
-custom/tcpclient.c:1456:5: warning: unused variable 'buf' [-Wunused-variable]
-custom/tcpclient.c:1455:6: warning: unused variable 'data' [-Wunused-variable]
-custom/tcpclient.c:1454:6: warning: unused variable 'State' [-Wunused-variable]
+custom/tcpclient.c:1642:5: warning: unused variable 'buf' [-Wunused-variable]
+custom/tcpclient.c:1641:6: warning: unused variable 'data' [-Wunused-variable]
+custom/tcpclient.c:1640:6: warning: unused variable 'State' [-Wunused-variable]
 custom/tcpclient.c: In function 'AfterServerReceiveAll':
-custom/tcpclient.c:1557:3: warning: implicit declaration of function 'Fota_Pro' [-Wimplicit-function-declaration]
+custom/tcpclient.c:1743:3: warning: implicit declaration of function 'Fota_Pro' [-Wimplicit-function-declaration]
 In file included from custom/tcpclient.c:77:0:
 custom/tcpclient.c: At top level:
 custom/at_deviceCmd.h:19:11: warning: 'at_cmdLine' defined but not used [-Wunused-variable]
-custom/tcpclient.c:125:11: warning: 'm_apn' defined but not used [-Wunused-variable]
-custom/tcpclient.c:126:11: warning: 'm_userid' defined but not used [-Wunused-variable]
-custom/tcpclient.c:127:11: warning: 'm_passwd' defined but not used [-Wunused-variable]
-custom/tcpclient.c:161:11: warning: 'open_COIN_UP_TIMER_ID_flag' defined but not used [-Wunused-variable]
-custom/tcpclient.c:242:13: warning: 's_iMutexId' defined but not used [-Wunused-variable]
+custom/tcpclient.c:128:11: warning: 'm_apn' defined but not used [-Wunused-variable]
+custom/tcpclient.c:129:11: warning: 'm_userid' defined but not used [-Wunused-variable]
+custom/tcpclient.c:130:11: warning: 'm_passwd' defined but not used [-Wunused-variable]
+custom/tcpclient.c:164:11: warning: 'open_COIN_UP_TIMER_ID_flag' defined but not used [-Wunused-variable]
+custom/tcpclient.c:245:13: warning: 's_iMutexId' defined but not used [-Wunused-variable]
+In file included from custom/tcpclient.c:80:0:
+custom/module_sms.h: In function 'module_sms_proc_main_task2':
+custom/module_sms.h:1021:9: warning: 'taskMsg.message' is used uninitialized in this function [-Wuninitialized]
+custom/module_sms.h:1040:13: warning: 'taskMsg.param1' is used uninitialized in this function [-Wuninitialized]
+custom/module_sms.h:1044:21: warning: 'taskMsg.param2' may be used uninitialized in this function [-Wuninitialized]
 custom/tool.c: In function 'StrToHex':
 custom/tool.c:23:2: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
 custom/tool.c:23:2: warning: incompatible implicit declaration of built-in function 'memset' [enabled by default]
@@ -339,7 +338,3 @@ include/ql_stdlib.h:39:8: note: expected 'const char *' but argument is of type 
 custom/fota/src/fota_http_code.c: In function 'http_DecodeHeader':
 custom/fota/src/fota_http_code.c:375:9: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
 custom/fota/src/fota_http_code.c:381:9: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-custom/fota/src/fota_http_code.c:361:28: warning: unused variable 'httpContext_p' [-Wunused-variable]
-custom/fota/src/fota_http_code.c:358:9: warning: unused variable 'startpos' [-Wunused-variable]
-custom/fota/src/fota_main.c: In function 'Ql_FOTA_StartUpgrade':
-custom/fota/src/fota_main.c:35:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]

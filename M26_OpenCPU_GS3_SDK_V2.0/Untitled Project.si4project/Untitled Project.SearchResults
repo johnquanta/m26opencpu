@@ -1,3 +1,2 @@
----- FLAG.Linked Matches (2 in 2 files) ----
-AnalyseData in analysePackage.c (custom) : 			FLAG.Linked = 1;
-{anonS_FLAG} in custom_common.h (custom) :  u8 Linked;
+---- Get a whole packet successfully Matches (1 in 1 files) ----
+GetServerData in ServerDataHandle.c (custom) : 						MY_DEBUG("<-- Get a whole packet successfully -->\r\n");

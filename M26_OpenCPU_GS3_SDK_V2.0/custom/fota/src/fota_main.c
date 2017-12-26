@@ -91,6 +91,8 @@ s32 Ql_FOTA_StartUpgrade(u8* url, ST_GprsConfig* apnCfg, Callback_Upgrade_State 
 		return -1;
     }
 
+    (void)retValue;//20171226//
+
     return ret;
 }
 

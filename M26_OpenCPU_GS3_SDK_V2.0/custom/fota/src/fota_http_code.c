@@ -355,10 +355,10 @@ s32 http_DecodeHeader(HttpHeader_t *httpheader,  u8 *decode_buffer, s32 decode_b
 {
     u8 *tailpos;
     s32 linelength;
-    u8 *startpos;
+    //20171226//u8 *startpos;
     bool bret;
     HttpLineValue_t lineValue;
-    HttpMainContext_t     *httpContext_p = &httpMainContext;
+    //20171226//HttpMainContext_t     *httpContext_p = &httpMainContext;
 
     if(decode_length)
         *decode_length = 0;

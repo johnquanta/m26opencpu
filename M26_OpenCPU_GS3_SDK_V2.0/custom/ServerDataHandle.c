@@ -55,14 +55,29 @@ void Device_Data_Init(void)
 
 }
 
+void hexBufPrintf(char *pTap,u8 *pData, u16 len)//20171226//
+{
+   MY_DEBUG( "%s:",pTap);  
+   
+   for(u16 i=0;i<len;i++)
+   {
+   		MY_DEBUG( "%02X ",pData[i]);  
+   }
+
+   MY_DEBUG( ",len=%d bytes\r\n",len);  
+}
+
 
 /***************************************************************************/
 static u8 DataCheck( u8 *pDataIn, u8 len )
 {                       
     if( len > 5 )
     {  
-    	MY_DEBUG( "<-------------len=%d,zB[0,1,3,2,4,5]=%02X,%02X,%02X%02X,%02X,%02X------------->\r\n",len,*(pDataIn+0),*(pDataIn+1),*(pDataIn+3),*(pDataIn+2),*(pDataIn+4),*(pDataIn+5) );  
-    }       
+    	MY_DEBUG( "<----len=%d,zB[0,1,3,2,4,5]=%02X,%02X,%02X%02X,%02X,%02X------------->\r\n",len,*(pDataIn+0),*(pDataIn+1),*(pDataIn+3),*(pDataIn+2),*(pDataIn+4),*(pDataIn+5) );  
+        
+		hexBufPrintf("<===srvData",pDataIn,len);//20171226//
+
+	}       
 			                
 	/*检查数据总长度*/
 	if( len != pDataIn[COM_LEN_OFF] )  
@@ -189,7 +204,7 @@ u8 GetServerData( u8 *GetBufOut )
 			    {
 					if( cnt == GetBufOut[COM_LEN_OFF] )
 					{
-						MY_DEBUG("<-- Get a whole packet successfully -->\r\n");
+						//20171226//MY_DEBUG("<-- Get a whole packet successfully -->\r\n");
 						return cnt;
 					}
 			    }
@@ -328,6 +343,8 @@ u32 ipaddr_addr(char * addr)
 
 
 /****************************************************************************************/
+extern void device_ParaSave(Device_sut * pDevice);//20171226//
+
 u8 UpdataIP_Handle( char *pIPdataIn, s32 len,  char *pIPaddrOut, u32 *pIPportOut )
 {
 
@@ -453,7 +470,9 @@ void ServerDataHandle(void)
 	    if( retANLSlen <= 0 )
 	    {
 	       return;
-	    }    
+	    }   
+		hexBufPrintf("===>ackSrvData", GetBuf, retANLSlen);//20171226//
+		
 		DataEncrypt( GetBuf, retANLSlen, GetBuf );
 		DepositSendingData( GetBuf, retANLSlen );       
 	}
@@ -464,13 +483,10 @@ void ServerDataHandle(void)
 
 void _GPRS_SendData(u8 *pData,u16 len)
 {
-	u8 ii=0;
+  hexBufPrintf("===>send2Srv:", pData, len);//20171226//
 
   DataEncrypt( pData, len, pData );
-
-
   DepositSendingData( pData, len );  
-
 }
 
 
@@ -482,18 +498,18 @@ void send_data_to_server(u8 com,u8 *pData,u16 len)
 	u16 check = 0;
 	u8 l;
 	u8 i;
-	u8 ii=0;
-	u8 err;
+	//20171226//u8 ii=0;
+	//20171226//u8 err;
 	l=(len+11)/8*8+2;		
-	((u8*)pTemp)[0]=0xd6;
-	((u8*)pTemp)[1]=l;
-	((u8*)pTemp)[COM_COM_OFF]=com;
-	Ql_memcpy(((u8*)pTemp)+COM_DATA_OFF,pData,len);
+	pTemp[0]=0xd6;
+	pTemp[1]=l;
+	pTemp[COM_COM_OFF]=com;
+	Ql_memcpy(pTemp+COM_DATA_OFF,pData,len);
 	for (i = COM_FRAME_OFF; i < l; i++) {			//
-		check += ((u8*)pTemp)[i];
+		check += pTemp[i];
 	}
-	((u8*)pTemp)[COM_CHECK_OFF] = check;
-	((u8*)pTemp)[COM_CHECK_OFF + 1] = check >> 8;
+	pTemp[COM_CHECK_OFF] = check;
+	pTemp[COM_CHECK_OFF + 1] = check >> 8;
 
 	
 	_GPRS_SendData(pTemp,l);
@@ -506,20 +522,20 @@ void send_data_to_server1(u8 com,u8 *pData,u16 len,u8 frame){
 	u16 check = 0;
 	u8 l=0;
 	u8 i=0;
-	u8 err=0;
+	//20171226//u8 err=0;
 	l=(len+11)/8*8+2;
 		
 
-	((u8*)pTemp)[0]=0xd6;
-	((u8*)pTemp)[1]=l;
-	((u8*)pTemp)[COM_FRAME_OFF]=frame;
-	((u8*)pTemp)[COM_COM_OFF]=com;
-	Ql_memcpy(((u8*)pTemp)+COM_DATA_OFF,pData,len);
-	for (i = COM_FRAME_OFF; i < l; i++) {			//
-		check += ((u8*)pTemp)[i];
+	pTemp[0]=0xd6;
+	pTemp[1]=l;
+	pTemp[COM_FRAME_OFF]=frame;
+	pTemp[COM_COM_OFF]=com;
+	Ql_memcpy(pTemp+COM_DATA_OFF,pData,len);
+	for (i = COM_FRAME_OFF; i < l; i++) {			
+		check += pTemp[i];
 	}
-	((u8*)pTemp)[COM_CHECK_OFF] = check;
-	((u8*)pTemp)[COM_CHECK_OFF + 1] = check >> 8;
+	pTemp[COM_CHECK_OFF] = check;
+	pTemp[COM_CHECK_OFF + 1] = check >> 8;
 	_GPRS_SendData(pTemp,l);
 
 
